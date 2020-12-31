@@ -13,7 +13,18 @@ class Game:
         self.all_players.add(self.player)
         self.pressed = {}
         self.all_monsters = pyg.sprite.Group()
-        # Temporaire
+
+    def game_over(self):
+        # relance le jeu au début
+        # reset monstres
+        self.all_monsters = pyg.sprite.Group()
+        #reset personnage
+        self.player = Player.Player(self)
+        # remetre au bouton du début
+        self.is_playing = False
+
+    def start(self):
+        self.is_playing = True
         self.spawn_monster()
         self.spawn_monster()
         self.spawn_monster()

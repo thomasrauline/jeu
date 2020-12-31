@@ -34,7 +34,7 @@ class Player(pyg.sprite.Sprite):
         # verification si le monstre meurt
         if self.health <= 0:
 
-            self.remove()
+            self.game.game_over()
 
     def update_health_bar(self, surface):
         #dessiner la barre de vie
